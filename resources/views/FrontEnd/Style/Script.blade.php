@@ -584,7 +584,7 @@
 
       localStorage.setItem('data', JSON.stringify(old_data));
       // alert(price);
-
+        view();
 
     }
   </script>
@@ -634,7 +634,7 @@
           max: <?php echo $max_price_range ?>,
 
           steps:10000,
-          values: [  <?php echo $min_price_range ?> ,  <?php echo $max_price ?>  ],
+          values: [  <?php echo request()->start_price ?? $min_price_range ?> ,  <?php echo request()->end_price ?? $max_price ?>  ],
 
           slide: function( event, ui ) {
             $( "#amount_start" ).val(ui.values[ 0 ]).simpleMoneyFormat();
