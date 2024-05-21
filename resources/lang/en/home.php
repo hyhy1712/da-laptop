@@ -31,7 +31,7 @@ return [
 	'hotdeals' => 'hot deals',
 
 	'freeship' => 'Free shipping for orders over 1 million',
-	
+
 
 	'hi' => 'Hi',
 
@@ -77,48 +77,49 @@ return [
 	'gia' => 'Price',
 	'status' => 'Status',
 	'qty' => 'Qty.',
-	'del' => 'Delete', 
-	'sosao' => 'Rating', 
-	'addcart' => 'Add To Cart', 
+	'del' => 'Delete',
+	'sosao' => 'Rating',
+	'addcart' => 'Add To Cart',
 
-	'hinhanh' => 'Image', 
-	'chitiet' => 'Detail', 
+	'hinhanh' => 'Image',
+	'chitiet' => 'Detail',
 	'nameproduct' => 'Product Name',
+    'product_id' => 'Product Id',
 
-	'addcompare' => 'Add To Compare', 
-	'addwishlist' => 'Add to WishList', 
-	'like' => 'Products Liked', 
-	'goodbrand' => 'Good Brand', 
+	'addcompare' => 'Add To Compare',
+	'addwishlist' => 'Add to WishList',
+	'like' => 'Products Liked',
+	'goodbrand' => 'Good Brand',
 
 
 
 
-	'commenttrans' => 'Reviews', 
-	'add' => 'Add', 
-	'reviewtrans' => 'Write Your Review', 
-	'yeu' => 'Wish', 
-	'thich' => 'list', 
-	'thanhtoan' => 'Payment', 
-	'thanhtoanonline' => 'Online Payment', 
-	'INSTOCK' => 'IN STOCK', 
-	'OUTSTOCK' => 'OUT OF STOCK', 
-	'ApplyCoupon' => 'Apply Coupon', 
-	'CodeCoupon' => 'Coupon Code ', 
+	'commenttrans' => 'Reviews',
+	'add' => 'Add',
+	'reviewtrans' => 'Write Your Review',
+	'yeu' => 'Wish',
+	'thich' => 'list',
+	'thanhtoan' => 'Payment',
+	'thanhtoanonline' => 'Online Payment',
+	'INSTOCK' => 'IN STOCK',
+	'OUTSTOCK' => 'OUT OF STOCK',
+	'ApplyCoupon' => 'Apply Coupon',
+	'CodeCoupon' => 'Coupon Code ',
 	'ContinueShopping' => 'Continue Shopping',
-	'CARTTOTALS' => 'CART TOTALS', 
-	'subtotal' => 'SUBTOTAL', 
-	'totalsss' => 'TOTAL', 
+	'CARTTOTALS' => 'CART TOTALS',
+	'subtotal' => 'SUBTOTAL',
+	'totalsss' => 'TOTAL',
 
 
-	'GreatValue' => 'Great Value', 
-	'WorlwideDelivery' => 'Worlwide Delivery', 
-	'SafePayment' => 'Safe Payment', 
-	'ShopConfidence' => 'Shop Confidence', 
-	'24/7HelpCenter' => '24/7 Help Center', 
+	'GreatValue' => 'Great Value',
+	'WorlwideDelivery' => 'Worlwide Delivery',
+	'SafePayment' => 'Safe Payment',
+	'ShopConfidence' => 'Shop Confidence',
+	'24/7HelpCenter' => '24/7 Help Center',
 
-	'new' => 'New', 
-	'top' => 'Top', 
-	'Notification' => 'Notification', 
+	'new' => 'New',
+	'top' => 'Top',
+	'Notification' => 'Notification',
 
 	//dang nhap
 	'Notification_error' => 'Email or password is incorrect!',

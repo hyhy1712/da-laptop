@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Models;
-use App\Models\Product; 
-use App\Models\Post; 
+use App\Models\Product;
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -39,8 +39,33 @@ class Cart extends Model
 	  	$this->totalQty++;
 	  	$this->totalPrice += $item->unit_or_promotion_price;
  	}
-	
 
+    public function change($product, $quantity){
+        $productCart = [
+            'qty'=> $quantity,
+            'unit_price' => $product->unit_price,
+            'promotion_price' => $product->promotion_price,
+            'item' => $product
+        ];
+
+        if($product->promotion_price == 0) {
+            $product->unit_or_promotion_price = $product->unit_price;
+        } else {
+            $product->unit_or_promotion_price = $product->promotion_price;
+        }
+        $productCart['price'] = $product->unit_or_promotion_price * $productCart['qty'];
+        $this->items[$product->id] = $productCart;
+        $this->recalculateCart();
+    }
+
+     private function recalculateCart(){
+         $this->totalQty = 0;
+         $this->totalPrice = 0;
+        foreach($this->items as $product){
+            $this->totalQty += $product['qty'];
+            $this->totalPrice += $product['price'];
+        }
+     }
 
 	//xóa 1
 	public function reduceByOne($id){

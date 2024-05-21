@@ -1,5 +1,5 @@
 @extends('Layout')
-@section('title')    
+@section('title')
 {{ trans('home.carttt') }}
 @endsection
 @section('content-layout')
@@ -37,6 +37,7 @@
                         <table>
                             <thead>
                                 <tr>
+                                    <th class="product-id" width="10%">{{ trans('home.product_id') }}</th>
                                     <th class="product-thumbnail">{{ trans('home.hinhanh') }}</th>
                                     <th class="product-name">{{ trans('home.producttt') }}</th>
                                     <th class="product-price">{{ trans('home.gia') }}</th>
@@ -47,8 +48,9 @@
                             </thead>
         					@if(Session('cart'))
                             <tbody>
-								@foreach($product_cart as $cart)	
+								@foreach($product_cart as $productId => $cart)
                                 <tr>
+                                    <td class="product-id">{{ $productId }}</td>
                                     <td class="product-thumbnail">
                                         <a href="#"><img src="source/image/product/{{$cart['item']['image']}}" alt="cart-image" height="101.6px" width="101.6px" /></a>
                                     </td>
@@ -56,17 +58,17 @@
                                     <td class="product-price">
                                     	<span class="amount">
 											@if($cart['item']['promotion_price']==0)
-												{{number_format($cart['item']['unit_price'],0,',','.')}} VNĐ 
-											@else 
-												{{number_format($cart['item']['promotion_price'],0,',','.')}} VNĐ 
+												{{number_format($cart['item']['unit_price'],0,',','.')}} VNĐ
+											@else
+												{{number_format($cart['item']['promotion_price'],0,',','.')}} VNĐ
 											@endif
                                     	</span>
                                     </td>
                                     <td class="product-quantity" style="text-align: center;">
-                                        <input style="width: 25%; text-align: center;" type="number" value="{{$cart['qty']}}" min="1" max="5"oninput="this.value = Math.abs(this.value)" name="qtycart" readonly="" />
+                                        <input style="width: 25%; text-align: center;background: none;border: 1px solid black" type="number" value="{{$cart['qty']}}" min="1" max="5"oninput="this.value = Math.abs(this.value)" name="qtycart" class="input-product-quantity" />
                                     </td>
                                     <td class="product-subtotal">{{ trans('home.INSTOCK') }}</td>
-                                    <td class="product-remove"> <a href="{{route('xoagiohang',$cart['item']['id'])}}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+                                    <td class="product-remove"> <a href="{{route('xoagiohang',$cart['item']['id'])}}" onclick="return confirm('Bạn có muốn xóa sản phẩm khỏi giỏ hàng không ?');".><i class="fa fa-times" aria-hidden="true"></i></a></td>
                                 </tr>
             					@endforeach
                             </tbody>
@@ -87,7 +89,7 @@
                     <!-- Table Content Start -->
                     <div class="row">
                        <!-- Cart Button Start -->
-                       	
+
                         <div class="col-md-8 col-sm-12">
                         	@if(!Session::get('coupon'))
 							<form method="post" action="{{url('/check-coupon')}}">
@@ -95,7 +97,7 @@
 
 									@csrf
 									<div>
-										<input type="text" name="coupon_code" placeholder="{{trans('home.CodeCoupon')}}" style="background: #fff; border: 1px solid #000; text-transform: none;color: #000"> 
+										<input type="text" name="coupon_code" placeholder="{{trans('home.CodeCoupon')}}" style="background: #fff; border: 1px solid #000; text-transform: none;color: #000">
 										<input type="submit" name="check_coupon" value="{{trans('home.ApplyCoupon')}}">
 									</div>
 
@@ -131,14 +133,14 @@
                                         </tr>
                                         <tr class="cart-subtotal">
                                         	<th>Coupon</th>
-                                        	<td>													
+                                        	<td>
                                         		@foreach(Session::get('coupon') as $key => $coun)
 													@if($coun['coupon_condition']==0)
 														{{$coun['coupon_number']}} %
 													@else
 														{{number_format($coun['coupon_number'],0,',','.')}} VNĐ
 													@endif
-												@endforeach	
+												@endforeach
 											</td>
                                         </tr>
                                         @else
@@ -218,3 +220,28 @@
 </div>
 <!-- Cart Main Area End -->
 @endsection
+
+<script src="{{asset('source/assets/frontend/js/vendor/jquery-3.2.1.min.js')}}"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        let timeout;
+        $(".input-product-quantity").on('input', function() {
+            clearTimeout(timeout);
+            const input = $(this);
+            let productId = input.closest('tr').find('.product-id').text();
+            timeout = setTimeout(function() {
+                let productQuantity = input.val();
+                $.ajax({
+                    type: "GET",
+                    url: `change-to-cart/${productId}`,
+                    data: `quantity=${productQuantity}`,
+                    dataType: 'JSON',
+                    success: function (response) {
+                        window.location.reload();
+                    }
+                });
+            }, 500); // delay 1 second
+        });
+    });
+</script>

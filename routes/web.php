@@ -47,6 +47,7 @@ Route::post('/check-coupon','pgcontroller@check_coupon');
 
 //gio hang
 Route::get('add-to-cart/{id}',['as'=>'themgiohang','uses'=>'pgcontroller@getAddToCart']);
+Route::get('change-to-cart/{id}',['as'=>'suagiohang','uses'=>'pgcontroller@changeCart']);
 Route::get('del-cart/{id}',['as'=>'xoagiohang','uses'=>'pgcontroller@getDelCart']);
 
 
