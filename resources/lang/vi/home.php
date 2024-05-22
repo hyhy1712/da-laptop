@@ -83,49 +83,50 @@ return [
 	'qmk' => 'Điền email để lấy lại mật khẩu',
 	'gia' => 'Giá Tiền',
 	'status' => 'Trạng thái',
-	'qty' => 'Số lượng', 
-	'del' => 'Xóa', 
-	'sosao' => 'Xếp Hạng', 
-	'addcart' => 'Thêm Vào Giỏ', 
-	
-	'hinhanh' => 'Hình Ảnh', 
-	'chitiet' => 'Chi Tiết', 
-	'nameproduct' => 'Tên Sản Phẩm', 
+	'qty' => 'Số lượng',
+	'del' => 'Xóa',
+	'sosao' => 'Xếp Hạng',
+	'addcart' => 'Thêm Vào Giỏ',
 
-	'addcompare' => 'So Sánh', 
-	'addwishlist' => 'Yêu Thích', 
-	'like' => 'Sản Phẩm Đã Thích', 
-	'goodbrand' => 'Thương Hiệu Tốt', 
+	'hinhanh' => 'Hình Ảnh',
+	'chitiet' => 'Chi Tiết',
+	'nameproduct' => 'Tên Sản Phẩm',
+    'product_id' => 'ID sản phẩm',
 
-
-
-	'commenttrans' => 'Đánh Giá', 
-	'add' => 'Thêm', 
-	'reviewtrans' => 'Viết Đánh Giá Của Bạn', 
-	'yeu' => 'Yêu', 
-	'thich' => 'thích', 
-	'thanhtoan' => 'Thanh Toán', 
-	'thanhtoanonline' => 'Thanh Toán Online', 
-	'INSTOCK' => 'Còn Hàng', 
-	'OUTSTOCK' => 'Hết Hàng', 
-	'ApplyCoupon' => 'Áp Dụng Giảm Giá', 
-	'CodeCoupon' => 'Mã Giảm Giá', 
-	'ContinueShopping' => 'Tiếp Tục Mua Sắm', 
-	'CARTTOTALS' => 'TỔNG GIỎ HÀNG', 
-	'subtotal' => 'TỔNG PHỤ', 
-	'totalsss' => 'TỔNG CỘNG', 
+    'addcompare' => 'So Sánh',
+	'addwishlist' => 'Yêu Thích',
+	'like' => 'Sản Phẩm Đã Thích',
+	'goodbrand' => 'Thương Hiệu Tốt',
 
 
-	'GreatValue' => 'Giá trị lớn', 
-	'WorlwideDelivery' => 'Giao hàng toàn quốc', 
-	'SafePayment' => 'Thanh toán an toàn', 
-	'ShopConfidence' => 'Tự tin mua sắm', 
+
+	'commenttrans' => 'Đánh Giá',
+	'add' => 'Thêm',
+	'reviewtrans' => 'Viết Đánh Giá Của Bạn',
+	'yeu' => 'Yêu',
+	'thich' => 'thích',
+	'thanhtoan' => 'Thanh Toán',
+	'thanhtoanonline' => 'Thanh Toán Online',
+	'INSTOCK' => 'Còn Hàng',
+	'OUTSTOCK' => 'Hết Hàng',
+	'ApplyCoupon' => 'Áp Dụng Giảm Giá',
+	'CodeCoupon' => 'Mã Giảm Giá',
+	'ContinueShopping' => 'Tiếp Tục Mua Sắm',
+	'CARTTOTALS' => 'TỔNG GIỎ HÀNG',
+	'subtotal' => 'TỔNG PHỤ',
+	'totalsss' => 'TỔNG CỘNG',
+
+
+	'GreatValue' => 'Giá trị lớn',
+	'WorlwideDelivery' => 'Giao hàng toàn quốc',
+	'SafePayment' => 'Thanh toán an toàn',
+	'ShopConfidence' => 'Tự tin mua sắm',
 	'24/7HelpCenter' => 'Trợ giúp 24/7',
 
-	'new' => 'Mới', 
-	'top' => 'Hàng Đầu', 
-	'Notification' => 'Thông báo', 
-	'Notification_error' => 'Email hoặc mật khẩu không chính xác!', 
+	'new' => 'Mới',
+	'top' => 'Hàng Đầu',
+	'Notification' => 'Thông báo',
+	'Notification_error' => 'Email hoặc mật khẩu không chính xác!',
 
 	//dang nhap
 	'Notification_error' => 'Email hoặc mật khẩu không chính xác!',
@@ -139,18 +140,27 @@ return [
 	'Pricelowtoheigh' => 'Giá, thấp đến cao',
 	'Priceheightolow' => 'Giá, cao đến thấp',
 
-
-
-
-
-
-
-
-
-
-
-
 	// 'stylesfound' => 'tìm thấy'
 
-
+    //The11Laptop
+    'Delivery Information' => 'Thông tin giao hàng',
+    'Privacy Policy' => 'Chính sách bảo mật',
+    'Terms & Conditions' => 'Điều khoản và điều kiện',
+    'FAQs' => 'Câu hỏi thường gặp',
+    'Return Policy' => 'Chính sách hoàn trả',
+    'Customer Service' => 'DỊCH VỤ KHÁCH HÀNG',
+    'Contact Us'=>'Liên hệ chúng tôi',
+    'Order History'=>'Lịch sử đơn hàng',
+    'Site Map'=>'Địa chỉ',
+    'GENERAL POLICY'=>'CHÍNH SÁCH CHUNG',
+    'General policies and regulations'=>'Chính sách, quy định chung',
+    'Warranty Policy'=>'Chính sách bảo hành',
+    'Genuine product policy'=>'Chính sách hàng chính hãng',
+    'Secure customer information'=>'Bảo mật thông tin khách hàn',
+    'Delivery policy'=>'Chính sách giao hàng',
+    'Policy for businesses'=>'Chính sách cho doanh nghiệp',
+    'PROMOTION INFORMATION'=>'THÔNG TIN KHUYẾN MẠI',
+    'Promotional information'=>'Thông tin khuyến mại',
+    'Promotional products'=>'Sản phẩm khuyến mại',
+    'New product'=>'Sản phẩm mới',
 ];
