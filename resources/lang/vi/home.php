@@ -140,18 +140,27 @@ return [
 	'Pricelowtoheigh' => 'Giá, thấp đến cao',
 	'Priceheightolow' => 'Giá, cao đến thấp',
 
-
-
-
-
-
-
-
-
-
-
-
 	// 'stylesfound' => 'tìm thấy'
 
-
+    //The11Laptop
+    'Delivery Information' => 'Thông tin giao hàng',
+    'Privacy Policy' => 'Chính sách bảo mật',
+    'Terms & Conditions' => 'Điều khoản và điều kiện',
+    'FAQs' => 'Câu hỏi thường gặp',
+    'Return Policy' => 'Chính sách hoàn trả',
+    'Customer Service' => 'DỊCH VỤ KHÁCH HÀNG',
+    'Contact Us'=>'Liên hệ chúng tôi',
+    'Order History'=>'Lịch sử đơn hàng',
+    'Site Map'=>'Địa chỉ',
+    'GENERAL POLICY'=>'CHÍNH SÁCH CHUNG',
+    'General policies and regulations'=>'Chính sách, quy định chung',
+    'Warranty Policy'=>'Chính sách bảo hành',
+    'Genuine product policy'=>'Chính sách hàng chính hãng',
+    'Secure customer information'=>'Bảo mật thông tin khách hàn',
+    'Delivery policy'=>'Chính sách giao hàng',
+    'Policy for businesses'=>'Chính sách cho doanh nghiệp',
+    'PROMOTION INFORMATION'=>'THÔNG TIN KHUYẾN MẠI',
+    'Promotional information'=>'Thông tin khuyến mại',
+    'Promotional products'=>'Sản phẩm khuyến mại',
+    'New product'=>'Sản phẩm mới',
 ];

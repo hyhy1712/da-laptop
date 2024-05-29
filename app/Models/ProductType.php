@@ -10,9 +10,9 @@ class ProductType extends Model
     protected $table = "type_products";
  	protected $primaryKey = 'id';
     public $timestamps = false;
- 	
+
     protected $fillable = [
-          'name_type','image'
+          'name_type','images'
     ];
 
     public function product(){
