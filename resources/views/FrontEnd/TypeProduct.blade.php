@@ -1,5 +1,5 @@
 @extends('Layout')
-@section('title')    
+@section('title')
 {{$loaisanpham->name_type}}
 @endsection
 @section('content-layout')
@@ -34,9 +34,11 @@
                                 <li>
                                     <a href="{{route('loaisanpham',$sl->id)}}">
                                         @if($url_canonical == route('loaisanpham',$sl->id))
-                                        <span style="color: #E62E04">{{$sl->name_type}} ({{$sp_sp}})</span>
+{{--                                        <span style="color: #E62E04">{{$sl->name_type}} ({{$sp_sp}})</span>--}}
+                                        <span style="color: #E62E04">{{$sl->name_type}}</span>
                                         @else
-                                        <span>{{$sl->name_type}} ({{ $sp_sp }})</span>
+{{--                                        <span>{{$sl->name_type}} ({{ $sp_sp }})</span>--}}
+                                        <span>{{$sl->name_type}}</span>
                                         @endif
                                     </a>
                                 </li>
@@ -61,8 +63,8 @@
                                 <p><input type="text" id="amount_start" class="amount-range" ></p>
                                 <p><input type="text" id="amount_end" class="amount-range" ></p>
                             </div>
-                            
-                            
+
+
                             <input type="hidden" id="start_price" name="start_price">
                             <input type="hidden" id="end_price" name="end_price">
                             <div class="clearfix"></div>
@@ -130,12 +132,12 @@
                                     <!-- Product Content End -->
                                 </div>
                                 @endforeach
-                                <!-- Single Product End -->                                       
+                                <!-- Single Product End -->
                             </div>
                             <!-- Side Item End -->
                         </div>
                     </div>
-                    <!-- Product Top End -->                            
+                    <!-- Product Top End -->
                     <!-- Single Banner Start -->
                     <div class="col-img">
                         <a href="#"><img src="{{asset('source/assets/frontend/img/banner/banner-sidebar.jpg')}}" alt="slider-banner"></a>
@@ -326,15 +328,15 @@
                                             <div class="pro-actions">
                                                 <div class="actions-primary">
                                                     @if($sptl->product_quantity>0)
-                                                    <a 
-                                                        <?php 
+                                                    <a
+                                                        <?php
                                                             if(Auth::check() || Session::get('user_name_login')){
                                                                 $addnewcart = route('themgiohang',$sptl->id);
                                                             }else{
                                                                 $addnewcart = route('dangnhap');
                                                             }
                                                          ?>
-                                                    href="{{$addnewcart }}" 
+                                                    href="{{$addnewcart }}"
                                                     title="{{ trans('home.addcart') }}"> + {{ trans('home.addcart') }}</a>
                                                     @else
                                                     <a class="disabled-link"> + {{ trans('home.addcart') }}</a>
@@ -364,8 +366,8 @@
                             @else
                             {{number_format($sptl->promotion_price,0,',','.')}} VNĐ
                             @endif" >
-                            <div class="single-product"> 
-                                <div class="row">        
+                            <div class="single-product">
+                                <div class="row">
                                     <!-- Product Image Start -->
                                     <div class="col-lg-4 col-md-5 col-sm-12">
                                         <div class="pro-img">
@@ -397,14 +399,14 @@
                                                     @if($sptl->product_quantity>0)
 
                                                     <a
-                                                        <?php 
+                                                        <?php
                                                             if(Auth::check() || Session::get('user_name_login')){
                                                                 $addnewcart = route('themgiohang',$sptl->id);
                                                             }else{
                                                                 $addnewcart = route('dangnhap');
                                                             }
-                                                        ?> 
-                                                    href="{{$addnewcart}}" 
+                                                        ?>
+                                                    href="{{$addnewcart}}"
                                                     title="" data-original-title="{{ trans('home.addcart') }}"> + {{ trans('home.addcart') }}</a>
                                                     @else
                                                     <a class="disabled-link"> + {{ trans('home.addcart') }}</a>

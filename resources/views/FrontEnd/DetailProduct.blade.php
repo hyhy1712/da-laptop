@@ -1,5 +1,5 @@
 @extends('Layout')
-@section('title')    
+@section('title')
     {{ trans('home.producttt') }}
 @endsection
 @section('content-layout')
@@ -36,7 +36,7 @@
                 @else
                 {{number_format($sanpham->promotion_price,0,',','.')}} VNĐ
                 @endif" >
-                
+
                 <input type="hidden" id="instock{{$sanpham->id}}" value="
                  @if($sanpham->product_quantity>0)
                  {{ trans('home.INSTOCK') }}
@@ -58,7 +58,14 @@
                     <!-- Thumbnail Image End -->
                     <div class="product-thumbnail mt-15">
                         <div class="thumb-menu owl-carousel nav tabs-area" role="tablist">
-                            <a class="active" data-toggle="tab" href="#thumb1"><img src="source/image/product/{{$sanpham->image}}" alt="product-thumbnail" height="138.83px" width="138.82px"></a>
+                            <a class="active thumb-link" data-toggle="tab" href="#thumb1">
+                                <img src="source/image/product/{{$sanpham->image}}" alt="product-thumbnail" height="138.83px" width="138.82px">
+                            </a>
+                            @foreach(json_decode($sanpham->detail_images, 1) as $image)
+                                <a class="thumb-link" data-toggle="tab" href="#thumb1">
+                                    <img src="source/image/product/{{$image}}" alt="product-thumbnail" height="138.83px" width="138.82px">
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                     <!-- Thumbnail image end -->
@@ -81,11 +88,11 @@
                                         $styte_star = 'fa-star-o';
                                         $color = 'color:#F39C11;';
                                     }
-                                
+
                                 @endphp
                                 <!-- Single Review List Start -->
-                                <i 
-                                    title="star_rating" 
+                                <i
+                                    title="star_rating"
                                     class="fa {{$styte_star}} rating"
                                     style="cursor:pointer; {{$color}}  font-size:14px; ">
                                 </i>
@@ -100,7 +107,7 @@
                         </div>
                         <div class="pro-price mtb-30">
                             <p class="d-flex align-items-center">
-                            	
+
                             	@if($sanpham->promotion_price == 0)
                             	<span class="price">{{number_format($sanpham->unit_price,0,',','.')}} VNĐ</span>
                             	@else
@@ -124,15 +131,15 @@
                             <div class="pro-actions">
                                 <div class="actions-primary">
                                 	@if($sanpham->product_quantity>0)
-                                    <a id="addcart{{$sanpham->id}}" 
-                                        <?php 
+                                    <a id="addcart{{$sanpham->id}}"
+                                        <?php
                                             if(Auth::check() || Session::get('user_name_login')){
                                                 $addnewcart = route('themgiohang',$sanpham->id);
                                             }else{
                                                 $addnewcart = route('dangnhap');
                                             }
-                                        ?> 
-                                        href="{{$addnewcart}}" 
+                                        ?>
+                                        href="{{$addnewcart}}"
                                         title="" data-original-title="{{ trans('home.addcart') }}"> + {{ trans('home.addcart') }}</a>
                                 	@else
                                     <a id="addcart{{$sanpham->id}}" class="disabled-link"> + {{ trans('home.addcart') }}</a>
@@ -202,7 +209,7 @@
                                  @csrf
                                 <input type="hidden" name="comment_product_id" class="comment_product_id" value="{{$sanpham->id}}">
                                  <div id="comment_show"></div>
-                            
+
                             </form>
                             <p class="review-mini-title"><b>{{ trans('home.reviewtrans') }}</b></p>
                             @foreach($sanpham_id as $key => $value)
@@ -217,15 +224,15 @@
                                         $styte_star = 'fa-star-o';
                                         $color = 'color:#F39C11;';
                                     }
-                                
+
                                 @endphp
                                 <!-- Single Review List Start -->
-                                <li 
-                                    title="star_rating" 
-                                    id="{{$value->id}}-{{$count}}" 
-                                    data-index="{{$count}}"  
-                                    data-product_id="{{$value->id}}" 
-                                    data-rating="{{$rating}}" 
+                                <li
+                                    title="star_rating"
+                                    id="{{$value->id}}-{{$count}}"
+                                    data-index="{{$count}}"
+                                    data-product_id="{{$value->id}}"
+                                    data-rating="{{$rating}}"
                                     class="fa {{$styte_star}} rating"
                                     style="cursor:pointer; {{$color}}  font-size:30px; ">
                                 </li>
@@ -274,7 +281,7 @@
                 @else
                 {{number_format($sptt->promotion_price,0,',','.')}} VNĐ
                 @endif" >
-                
+
                 <input type="hidden" id="instock{{$sptt->id}}" value="
                  @if($sptt->product_quantity>0)
                  {{ trans('home.INSTOCK') }}
@@ -305,16 +312,16 @@
                     <div class="pro-actions">
                         <div class="actions-primary">
                             @if($sptt->product_quantity>0)
-                            <a id="addcart{{$sptt->id}}" 
-                                <?php 
+                            <a id="addcart{{$sptt->id}}"
+                                <?php
                                     if(Auth::check() || Session::get('user_name_login')){
                                         $addnewcart = route('themgiohang',$sptt->id);
                                     }else{
                                         $addnewcart = route('dangnhap');
                                     }
-                                ?> 
-                                href="{{$addnewcart}}" 
-                                
+                                ?>
+                                href="{{$addnewcart}}"
+
                                 title="{{ trans('home.addcart') }}"> + {{ trans('home.addcart') }}</a>
                             @else
                             <a id="addcart{{$sptt->id}}" class="disabled-link"> + {{ trans('home.addcart') }}</a>
@@ -332,8 +339,8 @@
                 @endif
             </div>
             @endforeach
-            <!-- Single Product End -->                        
-        </div>                
+            <!-- Single Product End -->
+        </div>
         <!-- Hot Deal Product Active End -->
 
     </div>
@@ -374,5 +381,26 @@
       js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+
+
+      // Lấy tất cả các thẻ <a> có lớp thumb-link
+      var thumbLinks = document.querySelectorAll('.thumb-link');
+
+      // Lặp qua từng thẻ <a> và thêm sự kiện click
+      thumbLinks.forEach(function(link) {
+          link.addEventListener('click', function(event) {
+              event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+
+              // Lấy đường dẫn ảnh từ thẻ <img> bên trong thẻ <a> được click
+              var imgSrc = link.querySelector('img').src;
+
+              // Cập nhật thuộc tính src của thẻ img lớn trong thẻ div id="thumb1"
+              document.querySelector('#thumb1 img').src = imgSrc;
+
+              // Cập nhật thuộc tính href của thẻ <a> trong thẻ div id="thumb1" nếu cần thiết
+              document.querySelector('#thumb1 a').href = imgSrc;
+          });
+      });
+
     </script>
 @endsection
