@@ -1,7 +1,7 @@
 <div class="popup_banner">
     <span class="popup_off_banner">×</span>
     <div class="banner_popup_area">
-            <img src="{{asset('source/assets/frontend/img/banner/pop-banner.jpg')}}" alt="">
+            <img src="{{asset('source/assets/frontend/img/banner/pop-banner.png')}}" alt="">
     </div>
 </div>
 <!-- Banner Popup End -->
@@ -46,7 +46,7 @@
                     <!-- <li><a href="{{route('dathang')}}">Checkout</a></li> -->
                     @endif
                 </ul>
-                <ul>                                          
+                <ul>
                     <li><span>{{ trans('home.lang_1') }}:</span> <a href="#">
                         @if(config('app.locale') != 'en')
                         <img src="{{asset('source/assets/dest/img/vn.png')}}" width="16px" alt="language-selector">
@@ -58,13 +58,13 @@
                         <ul class="ht-dropdown">
                             <li><a href="{{URL::asset('')}}language/vi"><img src="{{asset('source/assets/dest/img/vn.png')}}" width="16px" alt="language-selector">{{ trans('home.languagevi') }}</a></li>
                             <li><a href="{{URL::asset('')}}language/en"><img src="{{asset('source/assets/frontend/img/header/1.jpg')}}" alt="language-selector">{{ trans('home.languageen') }}</a></li>
-                            
+
                         </ul>
                         <!-- Dropdown End -->
                     </li>
                     @if(Auth::check() || Session::get('user_id_login'))
                     <li>
-                        <a href="#"><i class="far fa-id-card"></i> {{ trans('home.hi') }}, 
+                        <a href="#"><i class="far fa-id-card"></i> {{ trans('home.hi') }},
                             @if(Session::get('user_name_login'))
                             {{Session::get('user_name_login')}}
                             @else
@@ -80,12 +80,12 @@
                     @endif
                     @else
      <!--                <li><a href="#">My Account<i class="lnr lnr-chevron-down"></i></a>
-                        
+
                         <ul class="ht-dropdown">
                             <li><a href="{{route('dangky')}}"><i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>  {{ trans('home.signup') }}</a></li>
                             <li><a href="{{route('dangnhap')}}"><i class="fas fa-sign-in-alt fa-sm fa-fw mr-2 text-gray-400"></i> {{ trans('home.signin') }}</a></li>
                         </ul>
-                        
+
                     </li>  -->
                     @endif
                 </ul>
@@ -101,7 +101,7 @@
             <div class="row align-items-center no-gutters">
                 <div class="col-lg-3 col-md-12">
                     <div class="logo mb-all-30">
-                        <a href="{{route('trang-chu')}}"><img src="{{asset('source/assets/dest/images/logo-laptop.png')}}" style="width: 214px; height: 162px" alt="logo-image"></a>
+                        <a href="{{route('trang-chu')}}"><img src="{{asset('source/assets/dest/images/the11laptop.png')}}" style="width: 214px; height: 162px" alt="logo-image"></a>
                     </div>
                 </div>
                 <!-- Categorie Search Box Start Here -->
@@ -126,11 +126,11 @@
                                     <span class="total-pro">
                                         @if(Session::has('cart'))
                                             @if(Auth::check())
-                                            {{Session('cart')->totalQty}} 
+                                            {{Session('cart')->totalQty}}
                                             @elseif(Session::get('user_name_login'))
-                                            {{Session('cart')->totalQty}} 
+                                            {{Session('cart')->totalQty}}
                                             @endif
-                                            
+
                                         @else 0
                                         @endif
                                     </span>
@@ -219,7 +219,7 @@
             <div class="row align-items-center">
                  <div class="col-xl-3 col-lg-4 col-md-6 vertical-menu d-none d-lg-block">
                     <span class="categorie-title">{{trans('home.brand')}}</span>
-                </div>                       
+                </div>
                 <div class="col-xl-9 col-lg-8 col-md-12 ">
                     <nav class="d-none d-lg-block">
                         <ul class="header-bottom-list d-flex">
@@ -255,7 +255,7 @@
                             </li>
                             @endif
 
-   
+
                             @if($url_canonical == route('gioithieu'))
                                 <li class="active"><a href="{{route('gioithieu')}}">{{ trans('home.about') }}</a></li>
                             @else
@@ -301,7 +301,7 @@
     <div class="container d-block d-lg-none">
         <div class="vertical-menu mt-30">
             <span class="categorie-title mobile-categorei-menu">{{trans('home.brand')}}</span>
-            <nav>  
+            <nav>
                 <div id="cate-mobile-toggle" class="category-menu sidebar-menu sidbar-style mobile-categorei-menu-list menu-hidden ">
                     <ul>
                         @foreach($loai_sanpham as $sl)

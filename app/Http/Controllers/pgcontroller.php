@@ -310,6 +310,18 @@ class pgcontroller extends Controller
         return redirect()->back();
     }
 
+    public function changeCart(Request $request, $productId){
+        $quantity = $request->quantity;
+        $cart = Session('cart') ? Session::get('cart') : null;
+        if ($cart){
+            $product = Product::join('post', 'products.id_post', '=', 'post.id_post')->find($productId);
+            $cart = new Cart($cart);
+            $cart->change($product, $quantity);
+            Session()->put('cart', $cart);
+        }
+        return response()->json();
+    }
+
     public function getDelCart($id)
     {
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
