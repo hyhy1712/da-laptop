@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>@yield('title') || ShopPv</title>
+    <title>@yield('title') || The11Laptop</title>
     @include('FrontEnd.Style.Link')
 
 </head>

@@ -23,7 +23,7 @@
     <div class="image-banner pb-50 off-white-bg">
         <div class="container">
             <div class="col-img">
-                <a href="#"><img src="{{ asset('source/assets/frontend/img/banner/h1-banner.jpg') }}"
+                <a href="#"><img src="{{ asset('source/assets/frontend/img/banner/h1-banner.png') }}"
                         alt="image banner"></a>
             </div>
         </div>
@@ -147,43 +147,43 @@ if (Auth::check() || Session::get('user_name_login')) {
             <div class="banner-box">
                 <div class="col-img" style="width: 224px; height: 174.44px">
                     <a href="#"><img width="224px" height="174.44px"
-                            src="{{ asset('source/assets/frontend/img/banner/9.jpg') }}" alt="banner 3"></a>
+                            src="https://lh3.googleusercontent.com/HV9Xh3UKxVixtsPVJOVRi0qlNtYSLWn62eb1WvYwlmPNUpH803EhwCSsUiAUT8VBd3ma-daR0WClHZW7IFjgBzQ-1HUZhHTD=w300-rw" alt="banner 3"></a>
                 </div>
                 <div class="col-img" style="width: 224px; height: 174.44px">
                     <a href="#"><img width="224px" height="174.44px"
-                            src="{{ asset('source/assets/frontend/img/banner/8.jpg') }}" alt="banner 3"></a>
+                            src="{{ asset('source/assets/frontend/img/banner/uudai01.jpg') }}" alt="banner 3"></a>
                 </div>
             </div>
             <div class="banner-box">
                 <div class="col-img" style="width: 224px; height: 359.79px">
                     <a href="#"><img width="224px" height="359.79px"
-                            src="{{ asset('source/assets/frontend/img/banner/10.jpg') }}" alt="banner 3"></a>
+                            src="https://lh3.googleusercontent.com/MAp_kIA2zHy8LpCAHOFXqWID6ZQu5SlebPq4Nafktu0zixFfuFdUtgvVnl2XQ1cTFVB5pRTct7unjJ--fmucvY3LoB4SOQJr" alt="banner 3"></a>
                 </div>
             </div>
             <div class="banner-box">
                 <div class="col-img" style="width: 224px; height: 174.44px">
                     <a href="#"><img width="224px" height="174.44px"
-                            src="{{ asset('source/assets/frontend/img/banner/12.jpg') }}" alt="banner 3"></a>
+                            src="{{ asset('source/assets/frontend/img/banner/uudai02.png') }}" alt="banner 3"></a>
                 </div>
                 <div class="col-img" style="width: 224px; height: 174.44px">
                     <a href="#"><img width="224px" height="174.44px"
-                            src="{{ asset('source/assets/frontend/img/banner/7.jpg') }}" alt="banner 3"></a>
+                            src="{{ asset('source/assets/frontend/img/banner/uudai03.jpg') }}" alt="banner 3"></a>
                 </div>
             </div>
             <div class="banner-box">
                 <div class="col-img" style="width: 224px; height: 359.79px">
                     <a href="#"><img width="224px" height="359.79px"
-                            src="{{ asset('source/assets/frontend/img/banner/11.jpg') }}" alt="banner 3"></a>
+                            src="https://lh3.googleusercontent.com/0U65LCgsBBtls6MDCPOjpSS3YIb7G05a9OlysJWXe1NYCo0RTR6oRP4giE4pesfTu6txbL4kNtKJWucP32Fx5HHxc-ljNYk" alt="banner 3"></a>
                 </div>
             </div>
             <div class="banner-box">
                 <div class="col-img" style="width: 224px; height: 174.44px">
                     <a href="#"><img width="224px" height="174.44px"
-                            src="{{ asset('source/assets/frontend/img/banner/13.jpg') }}" alt="banner 3"></a>
+                            src="{{ asset('source/assets/frontend/img/banner/uudai04.jpg') }}" alt="banner 3"></a>
                 </div>
                 <div class="col-img" style="width: 224px; height: 174.44px">
                     <a href="#"><img width="224px" height="174.44px"
-                            src="{{ asset('source/assets/frontend/img/banner/14.jpg') }}" alt="banner 3"></a>
+                            src="{{ asset('source/assets/frontend/img/banner/uudai05.jpg') }}" alt="banner 3"></a>
                 </div>
             </div>
         </div>
@@ -595,7 +595,7 @@ if (Auth::check() || Session::get('user_name_login')) {
                 <div class="col-lg-3">
                     <div class="col-img" style="width: 292.5px; height: 326.74px">
                         <img width="292.5px" height="326.74px"
-                            src="{{ asset('source/assets/frontend/img/banner/banner003.jpg') }}" alt="">
+                            src="{{ asset('source/assets/frontend/img/banner/thuonghieu01.jpg') }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -661,7 +661,7 @@ if (Auth::check() || Session::get('user_name_login')) {
                 <div class="col-lg-3">
                     <div class="col-img" style="width: 292.5px; height: 326.74px">
                         <img width="292.5px" height="326.74px"
-                            src="{{ asset('source/assets/frontend/img/banner/banner005.jpg') }}" alt="">
+                            src="{{ asset('source/assets/frontend/img/banner/thuonghieu02.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -671,15 +671,15 @@ if (Auth::check() || Session::get('user_name_login')) {
     <!-- Brand Banner Area End Here -->
     <div class="big-banner pb-100 pb-sm-60">
         <div class="container big-banner-box">
-            <div class="col-img" style="width: 580px; height: 189px">
+            <div class="col-img" style="width: 580px; height: 240px">
                 <a href="#">
-                    <img width="580px" height="189px"
-                        src="{{ asset('source/assets/frontend/img/banner/banner-n05.jpg') }}" alt="">
+                    <img width="580px" height="240px"
+                        src="{{ asset('source/assets/frontend/img/banner/thuonghieu03.jpg') }}" alt="">
                 </a>
             </div>
-            <div class="col-img" style="width: 580px; height: 189px">
+            <div class="col-img" style="width: 580px; height: 240px">
                 <a href="#">
-                    <img src="{{ asset('source/assets/frontend/img/banner/h1-banner3.jpg') }}" alt="">
+                    <img src="{{ asset('source/assets/frontend/img/banner/thuonghieu04.jpg') }}" alt="">
                 </a>
             </div>
         </div>
