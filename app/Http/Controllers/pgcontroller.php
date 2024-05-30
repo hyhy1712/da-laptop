@@ -408,6 +408,7 @@ class pgcontroller extends Controller
         $checkout_code = substr(md5(microtime()), rand(0, 26), 5);
         $bill = new Bill();
         $bill->id_customer = $customer->id;
+        $bill->id_user = auth()->user()->id;
         $bill->date_order = date('Y-m-d');
         if (Session::get('coupon')) {
             foreach (Session::get('coupon') as $key => $coun) {
@@ -823,6 +824,10 @@ class pgcontroller extends Controller
                 $bill->payment = $req->vnp_CardType;
                 $bill->status_bill = $req = 0;
                 $bill->order_code = $value1['code_order'];;
+
+                $user = User::where('email','=',$value1['email_order'])->first();
+                $bill->id_user = $user->id ?? null;
+
                 $bill->save();
             }
 

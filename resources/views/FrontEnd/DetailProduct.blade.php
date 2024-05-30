@@ -61,7 +61,7 @@
                             <a class="active thumb-link" data-toggle="tab" href="#thumb1">
                                 <img src="source/image/product/{{$sanpham->image}}" alt="product-thumbnail" height="138.83px" width="138.82px">
                             </a>
-                            @foreach(json_decode($sanpham->detail_images, 1) as $image)
+                            @foreach(json_decode($sanpham->detail_images ?? '[]', 1) as $image)
                                 <a class="thumb-link" data-toggle="tab" href="#thumb1">
                                     <img src="source/image/product/{{$image}}" alt="product-thumbnail" height="138.83px" width="138.82px">
                                 </a>
