@@ -212,8 +212,19 @@
 
                                                 <div class="form-group">
                                                     <label style="font-weight: bold; color: #000">{{ trans('Ql_sp.hinhanh') }}</label>
-                                                    <input type="file" id="e_image_{{$sp->id}}" name="image" class="form-control" multiple accept="image/*"/><br>
-                                                    <img src="source/image/product/{{$sp->image}}" alt="" width="200px">
+                                                    <input type="file" name="image" class="form-control update_image" multiple accept="image/*"/><br>
+                                                    <div class="update_displayimg" style="width: 200px">
+                                                        <img src="source/image/product/{{$sp->image}}" alt="" width="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label style="font-weight: bold; color: #000">Ảnh chi tiết</label>
+                                                    <input type="file" name="detail_images[]" class="form-control update_detail_images" multiple accept="image/*"/><br>
+                                                    <div class="update_display_detail_images">
+                                                        @foreach(json_decode($sp->detail_images ?? '[]', 1) as $image)
+                                                            <img src="source/image/product/{{$image}}" alt="" width="200px">
+                                                        @endforeach
+                                                    </div>
                                                 </div>
 
                                             </div>
@@ -357,14 +368,20 @@
 
                         <div class="form-group">
                             <label style="font-weight: bold; color: #000">{{ trans('Ql_sp.hinhanh') }}</label>
-                            <input type="file" id="e_image" name="image_file" class="form-control" multiple onchange="ImageFileUrl()"/>
+                            <input type="file" id="e_image" name="image_file" class="form-control" onchange="ImageFileUrl()"/>
                             <div id="displayimg"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="font-weight: bold; color: #000">Ảnh chi tiết</label>
+                            <input type="file" id="detail_images" name="detail_images[]" class="form-control" multiple onchange="onChangeDetailImages()" accept="image/*"/>
+                            <div id="display_detail_images"></div>
                         </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="icofont icofont-eye-alt"></i>Close</button>
-                        <button type="reset" class="btn btn-primary">Resest</button>
+                        <button type="reset" class="btn btn-primary" id="reset">Reset</button>
                         <button type="submit"  class="btn btn-primary"  onclick="incrementValue()"><i class="icofont icofont-check-circled"></i>Add</button>
 
 
@@ -393,5 +410,78 @@
         margin-top: 10px;
         width: 200px;
     }
+
+    #display_detail_images img{
+        margin: 10px;
+        width: 200px;
+    }
+
+    .update_display_detail_images img{
+        margin: 10px;
+        width: 200px;
+    }
+
+    .update_displayimg img{
+        width: 200px;
+    }
 </style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+<script>
+    $("#reset").on( "click", function() {
+        CKEDITOR.instances['e_description1'].setData('');
+        CKEDITOR.instances['e_description2'].setData('');
+        document.getElementById('displayimg').innerHTML = '';
+        document.getElementById('display_detail_images').innerHTML = '';
+    } );
+
+    function onChangeDetailImages(){
+        document.getElementById('display_detail_images').innerHTML = '';
+        var fileSelected = document.getElementById('detail_images').files;
+
+        if (fileSelected.length > 0) {
+            Object.keys(fileSelected).forEach(function(key) {
+                let fileToLoad = fileSelected[key];
+                var fileReader  = new FileReader();
+                fileReader.onload = function(fileLoadEvent){
+                    var srcData = fileLoadEvent.target.result;
+                    var newImage = document.createElement('img');
+                    newImage.src =srcData;
+                    document.getElementById('display_detail_images').insertAdjacentHTML('beforeend',newImage.outerHTML);
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            });
+        }
+    }
+
+    $('.update_image').on('change', function() {
+        // Sử dụng $(this) để tham chiếu đến thẻ input
+        var files = $(this).prop('files');
+
+        var previewDiv = $(this).parents('.form-group').find('.update_displayimg');
+        previewDiv.empty();
+
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var imageUrl = URL.createObjectURL(file);
+            var img = $('<img>').attr('src', imageUrl);
+            previewDiv.append(img);
+        }
+    });
+
+    $('.update_detail_images').on('change', function() {
+        // Sử dụng $(this) để tham chiếu đến thẻ input
+        var files = $(this).prop('files');
+
+        var previewDiv = $(this).parents('.form-group').find('.update_display_detail_images');
+        previewDiv.empty();
+
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var imageUrl = URL.createObjectURL(file);
+            var img = $('<img>').attr('src', imageUrl);
+            previewDiv.append(img);
+        }
+    });
+</script>
 @endsection

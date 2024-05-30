@@ -689,3 +689,8 @@
         $('#search_ajax').fadeOut();
     });
   </script>
+    <style>
+        #scrollUp{
+            bottom:120px;
+        }
+    </style>

@@ -64,7 +64,7 @@
                     </li>
                     @if(Auth::check() || Session::get('user_id_login'))
                     <li>
-                        <a href="#"><i class="far fa-id-card"></i> {{ trans('home.hi') }},
+                        <a href="{{route('thongtincanhan')}}"><i class="far fa-id-card"></i> {{ trans('home.hi') }},
                             @if(Session::get('user_name_login'))
                             {{Session::get('user_name_login')}}
                             @else
