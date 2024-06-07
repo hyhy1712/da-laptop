@@ -7,7 +7,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">{{ trans('home_ad.dashboard') }}</h1>
-        
+
     </div>
 
     <!-- Content Row -->
@@ -120,7 +120,7 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <p>{{ trans('home_ad.tungay') }}: <input type="text" id="datepicker" class="from-control"></p>
                         <p>{{ trans('home_ad.denngay') }}: <input type="text" id="datepicker1" class="from-control"></p>
-                        
+
                         <p>{{ trans('home_ad.loctheo') }}:
                             <select class="dashboard-filter" style="height: 30px;">
                                 <option style="text-align: center;">-- {{ trans('home_ad.choose') }} --</option>
