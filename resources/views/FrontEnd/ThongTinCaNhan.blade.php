@@ -16,7 +16,7 @@
                             <div class="mt-3">
                                 <div class="mt-2"><b>Tên: </b>{{ auth()->user()->full_name }}</div>
                                 <div class="mt-2"><b>Email: </b>{{ auth()->user()->email }}</div>
-                                <div class="mt-2"><b>SDT: </b>{{ auth()->user()->phone }}</div>
+                                <div class="mt-2"><b>SĐT: </b>{{ auth()->user()->phone }}</div>
                                 <div class="mt-2"><b>Địa chỉ: </b>{{ auth()->user()->address }}</div>
                             </div>
                         </div>

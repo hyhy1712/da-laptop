@@ -117,11 +117,11 @@ return [
 	'totalsss' => 'TỔNG CỘNG',
 
 
-	'GreatValue' => 'Giá trị lớn',
-	'WorlwideDelivery' => 'Giao hàng toàn quốc',
-	'SafePayment' => 'Thanh toán an toàn',
-	'ShopConfidence' => 'Tự tin mua sắm',
-	'24/7HelpCenter' => 'Trợ giúp 24/7',
+	'GENUINE PRODUCT' => 'SẢN PHẨM CHÍNH HÃNG',
+	'DELIVERY POLICY' => 'CHÍNH SÁCH GIAO HÀNG',
+	'EASY RETURN' => 'ĐỔI TRẢ DỄ DÀNG',
+	'CONVENIENT PAYMENT' => 'THANH TOÁN TIỆN LỢI',
+	'ENTHUSIASTIC SUPPORT' => 'HỖ TRỢ NHIỆT TÌNH',
 
 	'new' => 'Mới',
 	'top' => 'Hàng Đầu',
