@@ -137,20 +137,19 @@
     <div class="footer-top">
         <div class="container">
             <!-- Signup Newsletter Start -->
-          {{--  <div class="row mb-60">
+            <div class="row mb-60">
                  <div class="col-xl-7 col-lg-7 ml-auto mr-auto col-md-8">
-                    <div class="news-desc text-center mb-30">
-                         <h3>Sign Up For Newsletters</h3>
-                         <p>Be the First to Know. Sign up for newsletter today</p>
+                    <div class="footer-newsletter-title">
+                         <h4>ĐĂNG KÝ NHẬN EMAIL THÔNG BÁO KHUYẾN MẠI</h4>
                      </div>
                      <div class="newsletter-box">
                          <form action="#">
-                              <input class="subscribe" placeholder="your email address" name="email" id="subscribe" type="text">
-                              <button type="submit" class="submit">subscribe!</button>
+                              <input class="subscribe" placeholder="Nhập email hoặc sđt của bạn" name="email" id="subscribe" type="text">
+                              <button type="submit" class="submit" >Gửi!</button>
                          </form>
                      </div>
                  </div>
-            </div>--}}
+            </div>
             <!-- Signup-Newsletter End -->
             <div class="row">
                 <!-- Single Footer Start -->
