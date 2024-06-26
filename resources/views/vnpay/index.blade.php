@@ -1,5 +1,5 @@
 @extends('Layout')
-@section('title')    
+@section('title')
 Order Cart Online
 @endsection
 @section('content-layout')
@@ -16,58 +16,7 @@ Order Cart Online
     <!-- Container End -->
 </div>
 <!-- Breadcrumb End -->
-<!-- coupon-area start -->
-<div class="coupon-area pt-100 pt-sm-60">
-    <div class="container">
-        @if(count($errors)>0)
-        <div class="alert alert-danger" style="width: 100%">
-            @foreach($errors->all() as $err)
-            {{$err}}<br>
-            @endforeach
-        </div>
-        @endif
-        @if(Session::has('thongbao'))
-          <div class="alert alert-success alert-dismissible fade show">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Thành công!</strong> {{Session::get('thongbao')}}!
-          </div>
-        @endif
-        @if(Session::has('message'))
-            <div class="alert alert-success alert-dismissible fade show">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Thành công!</strong> {{Session::get('message')}}!
-            </div>
-        @elseif(Session::has('message_err'))
-            <div class="alert alert-danger  alert-dismissible fade show">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Thất bại!</strong> {{Session::get('message_err')}}!
-            </div>
-        @endif
-        <div class="row">
-            <div class="col-md-12">
-                <div class="coupon-accordion">
-                    <!-- ACCORDION START -->
-                    @if(!Session::get('coupon') && Session::has('cart'))
-                    <h3>Have a coupon? <span id="showcoupon">Click here to enter your code</span></h3>
-                    <div id="checkout_coupon" class="coupon-checkout-content">
-                        <div class="coupon-info">
-                            <form method="post" action="{{url('/check-coupon')}}">
-                                @csrf
-                                <p class="checkout-coupon">
-                                    <input type="text" class="code" name="coupon_code" placeholder="Coupon code" />
-                                    <input type="submit" name="check_coupon" value="Apply Coupon" />
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-                    @endif
-                    <!-- ACCORDION END -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- coupon-area end -->
+
 <!-- checkout-area start -->
 <div class="checkout-area pb-100 pt-15 pb-sm-60">
     <div class="container">
@@ -139,7 +88,7 @@ Order Cart Online
                                         <option value="IVB"> Ngan hang IVB</option>
                                         <option value="VISA"> Thanh toan qua VISA/MASTER</option>
                                     </select>
-                    
+
                                 </div>
                             </div>
 

@@ -4,47 +4,47 @@
         <div class="d-flex flex-wrap text-center" >
             <div class="single-support" >
                 <div class="support-icon">
-                    <i class="lnr lnr-gift"></i>
+                    <i class="lnr lnr-laptop"></i>
                 </div>
                 <div class="support-desc">
-                    <h6>{{trans('home.GreatValue')}}</h6>
-                    <!-- <span>Nunc id ante quis tellus faucibus dictum in eget.</span> -->
+                    <h6>{{trans('home.GENUINE PRODUCT')}}</h6>
+                    <span>Uy tín tạo niềm tin</span>
                 </div>
             </div>
             <div class="single-support" >
                 <div class="support-icon">
-                    <i class="lnr lnr-rocket" ></i>
+                    <i class="lnr lnr-car" ></i>
                 </div>
                 <div class="support-desc">
-                    <h6>{{trans('home.WorlwideDelivery')}}</h6>
-                    <!-- <span>Quisque posuere enim augue, in rhoncus diam dictum non</span> -->
+                    <h6>{{trans('home.DELIVERY POLICY')}}</h6>
+                    <span>Nhận hàng và thanh toán tại nhà</span>
                 </div>
             </div>
             <div class="single-support">
                 <div class="support-icon">
-                   <i class="lnr lnr-lock"></i>
+                   <i class="lnr lnr-sync"></i>
                 </div>
                 <div class="support-desc">
-                    <h6>{{trans('home.SafePayment')}}</h6>
-                    <!-- <span>Duis suscipit elit sem, sed mattis tellus accumsan.</span> -->
+                    <h6>{{trans('home.EASY RETURN')}}</h6>
+                    <span>1 đổi 1 trong 15 ngày</span>
                 </div>
             </div>
             <div class="single-support">
                 <div class="support-icon">
-                   <i class="lnr lnr-enter-down"></i>
+                   <i class="lnr lnr-select"></i>
                 </div>
                 <div class="support-desc">
-                    <h6>{{trans('home.ShopConfidence')}}</h6>
-                    <!-- <span>Faucibus dictum suscipit eget metus. Duis  elit sem, sed.</span> -->
+                    <h6>{{trans('home.CONVENIENT PAYMENT')}}</h6>
+                    <span>Trả tiền mặt, CK nhanh chóng, bảo mật</span>
                 </div>
             </div>
             <div class="single-support">
                 <div class="support-icon">
-                   <i class="lnr lnr-users"></i>
+                   <i class="lnr lnr-bubble"></i>
                 </div>
                 <div class="support-desc">
-                    <h6>{{trans('home.24/7HelpCenter')}}</h6>
-                    <!-- <span>Quisque posuere enim augue, in rhoncus diam dictum non.</span> -->
+                    <h6>{{trans('home.ENTHUSIASTIC SUPPORT')}}</h6>
+                    <span>Tư vấn, giải đáp mọi thắc mắc</span>
                 </div>
             </div>
         </div>
@@ -137,20 +137,19 @@
     <div class="footer-top">
         <div class="container">
             <!-- Signup Newsletter Start -->
-          {{--  <div class="row mb-60">
+            <div class="row mb-60">
                  <div class="col-xl-7 col-lg-7 ml-auto mr-auto col-md-8">
-                    <div class="news-desc text-center mb-30">
-                         <h3>Sign Up For Newsletters</h3>
-                         <p>Be the First to Know. Sign up for newsletter today</p>
+                    <div class="footer-newsletter-title">
+                         <h4>ĐĂNG KÝ NHẬN EMAIL THÔNG BÁO KHUYẾN MẠI</h4>
                      </div>
                      <div class="newsletter-box">
                          <form action="#">
-                              <input class="subscribe" placeholder="your email address" name="email" id="subscribe" type="text">
-                              <button type="submit" class="submit">subscribe!</button>
+                              <input class="subscribe" placeholder="Nhập email hoặc sđt của bạn" name="email" id="subscribe" type="text">
+                              <button type="submit" class="submit" >Gửi!</button>
                          </form>
                      </div>
                  </div>
-            </div>--}}
+            </div>
             <!-- Signup-Newsletter End -->
             <div class="row">
                 <!-- Single Footer Start -->
