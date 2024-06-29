@@ -1,5 +1,5 @@
 @extends('Layout')
-@section('title')    
+@section('title')
 {{ trans('home.forgot') }}
 @endsection
 @section('content-layout')
@@ -30,26 +30,26 @@
 		            {!! session()->get('error') !!}
 		        </div>
 		    @endif
-            <h3 class="mb-10 custom-title">register account</h3>
-            <p class="mb-10">If you already have an account with us, please login at the login page.</p>
+            <h3 class="mb-10 custom-title">Lấy lại tài khoản</h3>
+            <p class="mb-10">Nếu bạn đã có tài khoản, vui lòng quay lại trang đăng nhập</p>
         </div>
         <form class="password-forgot clearfix" action="{{url('/recover-pass')}}" method="post">
         	<input type="hidden" name="_token" value="{{csrf_token()}}">
             <fieldset>
-                <legend>Your Personal Details</legend>
+                <legend>Thông tin tài khoản của bạn</legend>
                 <div class="form-group d-md-flex">
-                    <label class="control-label col-md-2" for="email"><span class="require">*</span>Enter you email address here...</label>
+                    <label class="control-label col-md-2" for="email"><span class="require">*</span>Nhập email của bạn</label>
                     <div class="col-md-10">
-                        <input type="email" class="form-control" id="email_account" name="email_account" placeholder="Enter you email address here...">
+                        <input type="email" class="form-control" id="email_account" name="email_account" placeholder="abc@gmail.com">
                     </div>
                 </div>
             </fieldset>
             <div class="buttons newsletter-input">
                 <div class="float-left float-sm-left">
-                    <a class="customer-btn mr-20" href="{{route('dangnhap')}}">Back</a>
+                    <a class="customer-btn mr-20" href="{{route('dangnhap')}}">Quay lại</a>
                 </div>
                 <div class="float-right float-sm-right">
-                    <input type="submit" value="Continue" class="return-customer-btn">
+                    <input type="submit" value="Tiếp tục" class="return-customer-btn">
                 </div>
             </div>
         </form>

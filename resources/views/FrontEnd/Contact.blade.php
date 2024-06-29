@@ -28,7 +28,7 @@
 		    @endif
             <div class="address-wrapper row">
                 <div class="col-md-12">
-                    <div class="address-fname">
+                    <div class="address-name">
                         <input class="form-control" type="text" name="name" placeholder="{{ trans('home.YourName') }}">
                     </div>
                 </div>
@@ -37,14 +37,14 @@
                         <input class="form-control" type="email" name="email" placeholder="Email">
                     </div>
                 </div>
-<!--                 <div class="col-md-6">
-                    <div class="address-web">
-                        <input class="form-control" type="text" name="website" placeholder="{{$url_canonical}}" readonly>
+                <div class="col-md-12">
+                    <div class="address-tel">
+                        <input class="form-control" type="number" name="phone" placeholder="Số điện thoại" required>
                     </div>
-                </div> -->
+                </div>
                 <div class="col-md-12">
                     <div class="address-textarea">
-                        <textarea name="content" class="form-control" placeholder="{{ trans('home.Writeyourmessage') }}"></textarea>
+                        <textarea name="content" class="form-control" placeholder="{{ trans('home.Writeyourmessage') }} " required></textarea>
                     </div>
                 </div>
             </div>

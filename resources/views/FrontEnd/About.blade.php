@@ -8,7 +8,7 @@
         <div class="container">
             <div class="breadcrumb">
                 <ul class="d-flex align-items-center">
-                    <li><a href="index.html">{{trans('home.home')}}</a></li>
+                    <li><a href="{{route('trang-chu')}}">{{trans('home.home')}}</a></li>
                     <li class="active"><a href="about.html">{{trans('home.about')}}</a></li>
                 </ul>
             </div>

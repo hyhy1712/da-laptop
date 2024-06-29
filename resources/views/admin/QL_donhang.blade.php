@@ -1,6 +1,6 @@
  @extends('admin/Admin')
 
-@section('title-ad')   
+@section('title-ad')
     {{ trans('home_ad.ql_dh') }}
 @endsection
 
@@ -10,13 +10,13 @@
             <h6 class="m-0 font-weight-bold text-primary">{{ trans('home_ad.ql_dh') }}</h6>
         </div>
         <div style="margin-top: 25px; margin-bottom: 1px; margin-left: 9px">
-            <table>
-                <tr>
-                    <button style="margin-left: 10px" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#ExcelOrder">
-                        <i class="fas fa-file-export" aria-hidden="true"></i> {{ trans('home_ad.choose') }} {{ trans('home_ad.export') }} Excel
-                    </button>
-                </tr>
-            </table>
+{{--            <table>--}}
+{{--                <tr>--}}
+{{--                    <button style="margin-left: 10px" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#ExcelOrder">--}}
+{{--                        <i class="fas fa-file-export" aria-hidden="true"></i> {{ trans('home_ad.choose') }} {{ trans('home_ad.export') }} Excel--}}
+{{--                    </button>--}}
+{{--                </tr>--}}
+{{--            </table>--}}
         </div>
         <div class="card-body">
             <div class="table-responsive class-product">
@@ -42,13 +42,13 @@
                         <tr>
                             <th>STT </th>
                             <th>{{ trans('Ql_sp.tenkh') }}</th>
-                            
+
                             <th>Email</th>
                             <th>{{ trans('Ql_sp.pay') }}</th>
                             <!-- <th style="width: 15em;word-wrap:break-word;">Address</th> -->
                             <!-- <th>Phone Number</th> -->
                             <th>{{ trans('home_ad.codeorder') }}</th>
-                            
+
                             <th>{{ trans('Ql_sp.trangthai') }}</th>
                            <!--  <th>Created At </th>
                             <th>Total Money</th>
@@ -74,11 +74,11 @@
                                     <span class="xanhla tag-style"> Đang vận chuyển</span>
                                     <?php
                                      }elseif($dh->status_bill==0){
-                                    ?>  
+                                    ?>
                                      <span class="still-term tag-style">Đang xử lý...</span>
                                     <?php
                                     }else{
-                                    ?> 
+                                    ?>
                                     <a ><span class="expired tag-style">Hủy đơn</span></a>
                                     <?php
                                    }
@@ -88,7 +88,7 @@
                             <td>{{number_format($dh->total)}}</td>
                             <td>{{$dh->payment}}</td>
                             <td>{{$dh->note}}</td> -->
-                            
+
 
                             <td>
                                  <a href="{{route('donhangchitiet', $dh->id_bill)}}">
@@ -112,14 +112,14 @@
                                         <div class="modal-body">Chọn "Delete" bên dưới nếu bạn đã chắc chắn muốn xóa.</div>
                                         <div class="modal-footer">
                                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ bỏ </button>
-                                            
+
                                              <form method="" action="{{route('deletedh', $dh->id_bill)}}">
                                                 <button type="submit" class="btn btn-danger">
                                                     Delete
                                                 </button>
-                                            </form>                          
-                                           
-                                            
+                                            </form>
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@
     <div class="modal" id="ExcelOrder">
         <div class="modal-dialog">
           <div class="modal-content">
-          
+
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">{{ trans('home_ad.export') }} Excel</h4>
@@ -200,7 +200,7 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
-            
+
           </div>
         </div>
     </div>

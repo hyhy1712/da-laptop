@@ -42,11 +42,11 @@
                         <i class="fa fa-plus" aria-hidden="true"></i> {{ trans('home_ad.add') }}
                     </button>
                 </tr>
-                <tr>
-                    <button style="margin-left: 10px" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#ExcelSlide"><i class="fas fa-file-excel"></i>
-                        {{ trans('home_ad.import') }} / {{ trans('home_ad.export') }} Excel
-                    </button>
-                </tr>
+{{--                <tr>--}}
+{{--                    <button style="margin-left: 10px" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#ExcelSlide"><i class="fas fa-file-excel"></i>--}}
+{{--                        {{ trans('home_ad.import') }} / {{ trans('home_ad.export') }} Excel--}}
+{{--                    </button>--}}
+{{--                </tr>--}}
             </table>
         </div>
         <div class="card-body">
@@ -85,7 +85,7 @@
                                     <a href="{{url('/active-slide/'.$sl->id)}}"><span class="fas fa-eye"></span></a>
                                     <?php
                                      }else{
-                                    ?>  
+                                    ?>
                                      <a href="{{url('/unactive-slide/'.$sl->id)}}"><span style="color: #e74a3b;" class="fas fa-eye-slash"></span></a>
                                     <?php
                                    }
@@ -100,7 +100,7 @@
                                 <button class="btn btn-outline-danger delete" data-toggle="modal" data-target="#slideDel_{{$sl->id}}" type="button"><i class="fas fa-trash-alt"></i></button>
                                 <!-- </a> -->
                             </td>
-                            
+
 
                             <!-- Modal Delete-->
                             <div class="modal fade" id="slideDel_{{$sl->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -117,8 +117,8 @@
                                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ bỏ</button>
 
                                             <form method="" action="{{ route('deleteslide', $sl->id  )}}">
-                                                
-                                                
+
+
                                                 <button type="submit" class="btn btn-danger">
                                                     Delete
                                                 </button>
@@ -169,7 +169,7 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
 
                         </tr>
                     @endforeach
@@ -184,7 +184,7 @@
     <div class="modal" id="ExcelSlide">
         <div class="modal-dialog">
           <div class="modal-content">
-          
+
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">{{ trans('home_ad.import') }} / {{ trans('home_ad.export') }} Excel</h4>
@@ -226,17 +226,17 @@
                                 </button>
                             </form>
                         </tr>
-                        
+
 
                     </table>
                 </div>
             </div>
-            
+
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
-            
+
           </div>
         </div>
     </div>
@@ -282,7 +282,7 @@
                 </form>
             </div>
         </div>
-    </div> 
+    </div>
 
 <style type="text/css">
 

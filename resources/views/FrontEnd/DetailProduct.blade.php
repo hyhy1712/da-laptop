@@ -51,7 +51,7 @@
                     <!-- Thumbnail Large Image start -->
                     <div class="tab-content">
                         <div id="thumb1" class="tab-pane fade show active">
-                            <a class="fancybox" id="wishList_producturl{{$sanpham->id}}" href="source/image/product/{{$sanpham->image}}"><img  id="wishList_image{{$sanpham->id}}" src="source/image/product/{{$sanpham->image}}" alt="product-view" height="452.5px" width="452.5px"></a>
+                            <a id="wishList_producturl{{$sanpham->id}}" data-fancybox="images" href="source/image/product/{{$sanpham->image}}"><img  id="wishList_image{{$sanpham->id}}" src="source/image/product/{{$sanpham->image}}" alt="product-view" height="452.5px" width="452.5px"></a>
                         </div>
                     </div>
                     <!-- Thumbnail Large Image End -->
@@ -402,12 +402,5 @@
           });
       });
 
-
     </script>
-
-        <script>
-            $(document).ready(function() {
-                $('.fancybox').fancybox();
-            });
-        </script>
 @endsection
