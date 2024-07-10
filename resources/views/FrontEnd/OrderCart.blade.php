@@ -1,5 +1,5 @@
 @extends('Layout')
-@section('title')    
+@section('title')
 Order Cart
 @endsection
 @section('content-layout')
@@ -80,13 +80,13 @@ Order Cart
 	                    <div class="row">
 	                        <div class="col-md-12">
 	                            <div class="checkout-form-list mb-30">
-	                                <label>{{trans('QL_sp.tenkh')}} <span class="required">*</span></label>
+	                                <label>Họ & Tên <span class="required">*</span></label>
 	                                <input type="text" name="name23131" placeholder="Họ tên" required value="{{$user_dh->full_name}}">
 	                            </div>
 	                        </div>
 	                        <div class="col-md-12">
 	                            <div class="checkout-form-list mb-30">
-	                                <label>{{trans('QL_sp.gioitinh')}} <span class="required">*</span></label>
+	                                <label>Giới tính <span class="required">*</span></label>
 	                                <input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">{{trans('home.male')}}</span>
 									<input id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 10%"><span>{{trans('home.female')}}</span>
 	                            </div>
@@ -94,7 +94,7 @@ Order Cart
 	                        <div class="col-md-12">
 	                        	<div class="order-notes">
 	                            <div class="checkout-form-list">
-	                                <label>{{trans('QL_sp.diachi')}} <span class="required">*</span></label>
+	                                <label>Địa chỉ <span class="required">*</span></label>
 	                                <textarea  name="address11223" id="address11223" placeholder="Street Address"rows="4" cols="50">{{$user_dh->address}}</textarea>
 	                            </div>
 	                        </div>
@@ -147,7 +147,7 @@ Order Cart
                                         <option value="IVB"> Ngan hang IVB</option>
                                         <option value="VISA"> Thanh toan qua VISA/MASTER</option>
                                     </select>
-                    
+
                                 </div>
                             </div>
                             @endif
@@ -189,7 +189,7 @@ Order Cart
 	                                    </td>
 	                                    <td class="product-total">
 
-	                                        <span class="amount">{{number_format( $cart['price'] * $cart['qty'],0,',','.') }} VNĐ</span>
+	                                        <span class="amount">{{number_format($cart['price'],0,',','.')}}  VNĐ</span>
 	                                    </td>
 	                                </tr>
 									@endforeach
@@ -257,16 +257,16 @@ Order Cart
 	                                    <h5 class="mb-0">
 	                                        @if(Session::has('pay'))
 	                                        <a class="btn btn-link collapsed">{{ trans('home.thanhtoanonline') }}</a>
-	                                        @else	
+	                                        @else
 	                                        <a class="btn btn-link">{{ trans('home.thanhtoan') }}</a>
 	                                        @endif
-	                                        
+
 	                                    </h5>
 	                                </div>
 
 	                                <div id="collapseOne" class="collapse show" aria-labelledby="headingone" data-parent="#accordion">
-	                                
-	                                	
+
+
 	                                    <div class="card-body">
 	                                    	@if(Session::has('pay'))
 	                                    	<p>Online</p>
@@ -287,7 +287,7 @@ Order Cart
 	                                    </div> -->
 	                                </div>
 	                            </div>
-	                            
+
 	                            <!-- <div class="card"> -->
 	                                <!-- <div class="card-header" id="headingthree"> -->
 	                                	<!-- <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="ATM" data-order_button_text="" hidden=""> -->

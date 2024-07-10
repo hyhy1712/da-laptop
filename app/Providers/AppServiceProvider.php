@@ -98,7 +98,7 @@ class AppServiceProvider extends ServiceProvider
                 $loai_count = ProductType::all()->count();
                 $sp_count = Product::all()->count();
                 $nd_count = User::all()->count();
-                $dh_count = Bill::all()->count();
+                $dh_count = Bill::join('customer', 'customer.id', '=', 'bills.id_customer')->orderby('id_bill', 'DESC')->count();
                 $posts_count = Post::all()->count();
                 $slide_count = Slide::all()->count();
                 $dh_count_chuaduyet = Bill::where('status_bill', 0)->count();
