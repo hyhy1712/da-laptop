@@ -1,5 +1,5 @@
 @extends('Layout')
-@section('title')    
+@section('title')
 Order Cart
 @endsection
 @section('content-layout')
@@ -16,58 +16,7 @@ Order Cart
     <!-- Container End -->
 </div>
 <!-- Breadcrumb End -->
-<!-- coupon-area start -->
-<div class="coupon-area pt-100 pt-sm-60">
-    <div class="container">
-<!-- 		@if(count($errors)>0)
-        <div class="alert alert-danger" style="width: 100%">
-            @foreach($errors->all() as $err)
-            {{$err}}<br>
-            @endforeach
-        </div>
-        @endif -->
-<!-- 		@if(Session::has('thongbao'))
-		  <div class="alert alert-success alert-dismissible fade show">
-		    <button type="button" class="close" data-dismiss="alert">&times;</button>
-		    <strong>Thành công!</strong> {{Session::get('thongbao')}}!
-		  </div>
-		@endif -->
-	    @if(Session::has('message'))
-		    <div class="alert alert-success alert-dismissible fade show">
-			    <button type="button" class="close" data-dismiss="alert">&times;</button>
-			    <strong>Thành công!</strong> {{Session::get('message')}}!
-		    </div>
-		@elseif(Session::has('message_err'))
-		    <div class="alert alert-danger  alert-dismissible fade show">
-			    <button type="button" class="close" data-dismiss="alert">&times;</button>
-			    <strong>Thất bại!</strong> {{Session::get('message_err')}}!
-		    </div>
-		@endif
-        <div class="row">
-            <div class="col-md-12">
-                <div class="coupon-accordion">
-                    <!-- ACCORDION START -->
-                    @if(!Session::get('coupon') && Session::has('cart'))
-                    <h3>Have a coupon? <span id="showcoupon">Click here to enter your code</span></h3>
-                    <div id="checkout_coupon" class="coupon-checkout-content">
-                        <div class="coupon-info">
-                            <form method="post" action="{{url('/check-coupon')}}">
-                            	@csrf
-                                <p class="checkout-coupon">
-                                    <input type="text" class="code" name="coupon_code" placeholder="Coupon code" />
-                                    <input type="submit" name="check_coupon" value="Apply Coupon" />
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-                    @endif
-                    <!-- ACCORDION END -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- coupon-area end -->
+
 <!-- checkout-area start -->
 <div class="checkout-area pb-100 pt-15 pb-sm-60">
     <div class="container">
@@ -147,7 +96,7 @@ Order Cart
                                         <option value="IVB"> Ngan hang IVB</option>
                                         <option value="VISA"> Thanh toan qua VISA/MASTER</option>
                                     </select>
-                    
+
                                 </div>
                             </div>
                             @endif
@@ -257,16 +206,16 @@ Order Cart
 	                                    <h5 class="mb-0">
 	                                        @if(Session::has('pay'))
 	                                        <a class="btn btn-link collapsed">{{ trans('home.thanhtoanonline') }}</a>
-	                                        @else	
+	                                        @else
 	                                        <a class="btn btn-link">{{ trans('home.thanhtoan') }}</a>
 	                                        @endif
-	                                        
+
 	                                    </h5>
 	                                </div>
 
 	                                <div id="collapseOne" class="collapse show" aria-labelledby="headingone" data-parent="#accordion">
-	                                
-	                                	
+
+
 	                                    <div class="card-body">
 	                                    	@if(Session::has('pay'))
 	                                    	<p>Online</p>
@@ -287,7 +236,7 @@ Order Cart
 	                                    </div> -->
 	                                </div>
 	                            </div>
-	                            
+
 	                            <!-- <div class="card"> -->
 	                                <!-- <div class="card-header" id="headingthree"> -->
 	                                	<!-- <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="ATM" data-order_button_text="" hidden=""> -->

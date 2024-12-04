@@ -34,9 +34,11 @@
                                 <li>
                                     <a href="{{route('loaisanpham',$sl->id)}}">
                                         @if($url_canonical == route('loaisanpham',$sl->id))
-                                        <span style="color: #E62E04">{{$sl->name_type}} ({{$sp_sp}})</span>
+{{--                                        <span style="color: #E62E04">{{$sl->name_type}} ({{$sp_sp}})</span>--}}
+                                        <span style="color: #E62E04">{{$sl->name_type}}</span>
                                         @else
-                                        <span>{{$sl->name_type}} ({{ $sp_sp }})</span>
+{{--                                        <span>{{$sl->name_type}} ({{ $sp_sp }})</span>--}}
+                                        <span>{{$sl->name_type}}</span>
                                         @endif
                                     </a>
                                 </li>

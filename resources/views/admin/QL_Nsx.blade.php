@@ -43,11 +43,11 @@
                         <i class="fa fa-plus" aria-hidden="true"></i> {{ trans('home_ad.add') }}
                     </button>
                 </tr>
-                <tr>
-                    <button style="margin-left: 10px" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#ExcelType"><i class="fas fa-file-excel"></i>
-                        {{ trans('home_ad.import') }} / {{ trans('home_ad.export') }} Excel
-                    </button>
-                </tr>
+{{--                <tr>--}}
+{{--                    <button style="margin-left: 10px" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#ExcelType"><i class="fas fa-file-excel"></i>--}}
+{{--                        {{ trans('home_ad.import') }} / {{ trans('home_ad.export') }} Excel--}}
+{{--                    </button>--}}
+{{--                </tr>--}}
             </table>
         </div>
         <div class="card-body">
@@ -98,10 +98,10 @@
                                         <div class="modal-body">Chọn "Delete" bên dưới nếu bạn đã chắc chắn muốn xóa.</div>
                                         <div class="modal-footer">
                                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ bỏ</button>
-                          
+
                                             <form method="" action="{{route('deletensx', $nsxx->id )}}">
-                                                
-                                                
+
+
                                                 <button type="submit" class="btn btn-danger">
                                                     Delete
                                                 </button>
@@ -145,7 +145,7 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
 
                         </tr>
                     @endforeach
@@ -162,13 +162,13 @@
     <div class="modal" id="ExcelType">
         <div class="modal-dialog">
           <div class="modal-content">
-          
+
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">{{ trans('home_ad.import') }} / {{ trans('home_ad.export') }} Excel</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            
+
             <!-- Modal body -->
             <div class="modal-body">
                 <div style="margin-top: 15px; margin-bottom: 10px; margin-left: 2px">
@@ -199,12 +199,12 @@
                     </table>
                 </div>
             </div>
-            
+
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
-            
+
           </div>
         </div>
     </div>
@@ -242,7 +242,7 @@
                 </form>
             </div>
         </div>
-    </div> 
+    </div>
 
 
 <style type="text/css">

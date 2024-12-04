@@ -98,13 +98,12 @@
                                         @if (Auth::check()) href="{{ route('themgiohang', $product_km->id) }}"
                                     @else href="{{ route('dangnhap') }}" @endif title="{{ trans('home.addcart') }}"> + {{ trans('home.addcart') }}</a> -->
                                         <a id="addcart{{ $product_km->id }}" <?php
-if (Auth::check() || Session::get('user_name_login')) {
-    $addnewcart = route('themgiohang', $product_km->id);
-} else {
-    $addnewcart = route('dangnhap');
-}
-
-?>
+                                        if (Auth::check() || Session::get('user_name_login')) {
+                                            $addnewcart = route('themgiohang', $product_km->id);
+                                        } else {
+                                           $addnewcart = route('dangnhap');
+                                        }
+                                        ?>
                                             href="{{ $addnewcart }}" title="{{ trans('home.addcart') }}"> +
                                             {{ trans('home.addcart') }}</a>
                                     @else
@@ -282,12 +281,12 @@ if (Auth::check() || Session::get('user_name_login')) {
                                                 <div class="actions-primary">
                                                     @if ($new->product_quantity > 0)
                                                         <a id="addcart{{ $new->id }}" <?php
-if (Auth::check() || Session::get('user_name_login')) {
-    $addnewcart = route('themgiohang', $new->id);
-} else {
-    $addnewcart = route('dangnhap');
-}
-?>
+                                                    if (Auth::check() || Session::get('user_name_login')) {
+                                                        $addnewcart = route('themgiohang', $new->id);
+                                                    } else {
+                                                        $addnewcart = route('dangnhap');
+                                                    }
+                                                    ?>
                                                             href="{{ $addnewcart }}"
                                                             title="{{ trans('home.addcart') }}"> +
                                                             {{ trans('home.addcart') }}</a>
@@ -390,12 +389,12 @@ if (Auth::check() || Session::get('user_name_login')) {
                                                 <div class="actions-primary">
                                                     @if ($top->product_quantity > 0)
                                                         <a id="addcart{{ $top->id }}" <?php
-if (Auth::check() || Session::get('user_name_login')) {
-    $addnewcart = route('themgiohang', $top->id);
-} else {
-    $addnewcart = route('dangnhap');
-}
-?>
+                                                        if (Auth::check() || Session::get('user_name_login')) {
+                                                            $addnewcart = route('themgiohang', $top->id);
+                                                        } else {
+                                                            $addnewcart = route('dangnhap');
+                                                        }
+                                                        ?>
                                                             href="{{ $addnewcart }}"
                                                             title="{{ trans('home.addcart') }}"> +
                                                             {{ trans('home.addcart') }}</a>
@@ -513,12 +512,12 @@ if (Auth::check() || Session::get('user_name_login')) {
                                             <div class="actions-primary">
                                                 @if ($top_pr->product_quantity > 0)
                                                     <a id="addcart{{ $top_pr->id }}" <?php
-if (Auth::check() || Session::get('user_name_login')) {
-    $addnewcart = route('themgiohang', $top_pr->id);
-} else {
-    $addnewcart = route('dangnhap');
-}
-?>
+                                                if (Auth::check() || Session::get('user_name_login')) {
+                                                    $addnewcart = route('themgiohang', $top_pr->id);
+                                                } else {
+                                                    $addnewcart = route('dangnhap');
+                                                }
+                                                ?>
                                                         href="{{ $addnewcart }}"
                                                         title="{{ trans('home.addcart') }}"> +
                                                         {{ trans('home.addcart') }}</a>

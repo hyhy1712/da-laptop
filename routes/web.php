@@ -75,6 +75,12 @@ Route::post('dang-ky',['as'=>'dangky','uses'=>'TaiKhoan_Controller@postDangKy'])
 Route::get('dang-xuat',['as'=>'dangxuat','uses'=>'TaiKhoan_Controller@postDangXuat']);
 Route::post('userUpdate1',['as'=>'userupdate1','uses'=>'TaiKhoan_Controller@userUpdate1']);
 
+Route::get('thong-tin-ca-nhan',['as'=>'thongtincanhan','uses'=>'TaiKhoan_Controller@getThongTinCaNhan']);
+Route::post('thay-mat-khau',['as'=>'thaymatkhau','uses'=>'TaiKhoan_Controller@postThayMatKhau']);
+Route::get('chi-tiet-don-hang/{id}',['as'=>'chitietdonhang','uses'=>'TaiKhoan_Controller@getChiTietDonHang']);
+
+
+
 //quen mat khau
 Route::get('/quen-mat-khau','passController@quen_mat_khau');
 Route::post('/recover-pass','passController@recover_pass');

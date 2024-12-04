@@ -1,5 +1,5 @@
 @extends('Layout')
-@section('title')    
+@section('title')
 {{ trans('home.signup') }}
 @endsection
 @section('content-layout')
@@ -50,8 +50,9 @@
                         <div class="form-group d-md-flex align-items-md-center">
                             <label class="control-label col-md-2" for="number"><span class="require">*</span>{{trans('home.phone')}}</label>
                             <div class="col-md-10">
-                                <input type="email" class="form-control" id="phone" name="phone" placeholder="{{trans('home.phone')}}">
+                                <input type="number" class="form-control" id="phone" name="phone" placeholder="{{trans('home.phone')}}" maxlength="10" oninput="validateLength(this)" required>
                             </div>
+
                         </div>
                         <div class="form-group d-md-flex align-items-md-center">
                             <label class="control-label col-md-2" for="number"><span class="require">*</span>{{trans('home.ress')}}</label>
@@ -75,7 +76,7 @@
                             </div>
                         </div>
                     </fieldset>
-                   
+
                     <div class="terms">
                         <div class="float-md-right">
                             <input type="submit" value="{{trans('home.continue')}}" class="return-customer-btn">

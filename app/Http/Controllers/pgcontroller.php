@@ -102,31 +102,26 @@ class pgcontroller extends Controller
         } elseif (isset($_GET['start_price']) && $_GET['end_price']) {
             $min_price = $_GET['start_price'];
             $max_price = $_GET['end_price'];
-
-            $sanpham_theoloai = Product::join('post', 'products.id_post', '=', 'post.id_post')->whereBetween('unit_price', [$min_price, $max_price])->orderBy('unit_price', 'ASC')->paginate(6);
-
+            $sanpham_theoloai = Product::join('post', 'products.id_post', '=', 'post.id_post')->where('id_type', $typesanpham)->whereBetween('unit_price', [$min_price, $max_price])->orderBy('unit_price', 'ASC')->paginate(6);
         } else {
             $sanpham_theoloai = Product::join('post', 'products.id_post', '=', 'post.id_post')->where('id_type', $typesanpham)->paginate(6);
         }
 
-        if (count($sanpham_theoloai) > 0) {
-            $sanpham_new = Product::join('post', 'products.id_post', '=', 'post.id_post')->where('new', 1)->inRandomOrder()->paginate(3);
-            $loai = ProductType::all();
-            $loaisanpham = ProductType::where('id', $typesanpham)->first();
+        $sanpham_new = Product::join('post', 'products.id_post', '=', 'post.id_post')->where('new', 1)->inRandomOrder()->paginate(3);
+        $loai = ProductType::all();
+        $loaisanpham = ProductType::where('id', $typesanpham)->first();
 
-            $posts = Post::get();
-            $multi_description = 'description_' . app()->getLocale();
-            foreach ($sanpham_theoloai as $key => $value) {
-                # code...
-                $meta_desc = $value->$multi_description;
-                // $url_canonical = $req->url();
-                $image_og = url('source/image/product/' . $value->image);
-            }
-            return view('FrontEnd.TypeProduct', compact('sanpham_theoloai', 'sanpham_new', 'loai', 'loaisanpham', 'meta_desc', 'image_og'));
-        } else {
-            return redirect()->back();
+        $posts = Post::get();
+        $multi_description = 'description_' . app()->getLocale();
+        $meta_desc = null;
+        $image_og = null;
+        foreach ($sanpham_theoloai as $key => $value) {
+            # code...
+            $meta_desc = $value->$multi_description;
+            // $url_canonical = $req->url();
+            $image_og = url('source/image/product/' . $value->image);
         }
-
+        return view('FrontEnd.TypeProduct', compact('sanpham_theoloai', 'sanpham_new', 'loai', 'loaisanpham', 'meta_desc', 'image_og'));
     }
 
     public function getAllproduct(Request $req)
@@ -413,6 +408,7 @@ class pgcontroller extends Controller
         $checkout_code = substr(md5(microtime()), rand(0, 26), 5);
         $bill = new Bill();
         $bill->id_customer = $customer->id;
+        $bill->id_user = auth()->user()->id;
         $bill->date_order = date('Y-m-d');
         if (Session::get('coupon')) {
             foreach (Session::get('coupon') as $key => $coun) {
@@ -828,6 +824,10 @@ class pgcontroller extends Controller
                 $bill->payment = $req->vnp_CardType;
                 $bill->status_bill = $req = 0;
                 $bill->order_code = $value1['code_order'];;
+
+                $user = User::where('email','=',$value1['email_order'])->first();
+                $bill->id_user = $user->id ?? null;
+
                 $bill->save();
             }
 

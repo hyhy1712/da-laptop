@@ -44,7 +44,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-dragon"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Administrator</div>
+                <div class="sidebar-brand-text mx-3">Admin The11Laptop</div>
             </a>
 
             <!-- Divider -->
@@ -199,12 +199,12 @@
                 </a>
             </li>  --}}
 
-            <li class="@if (Request::url() == route('quanlycoupon')) nav-item active  @else nav-item @endif">
-                <a class="nav-link"  href="{{route('quanlycoupon')}}">
-                    <i class="fab fa-discourse"></i>
-                    <span>{{ trans('home_ad.ql_coupon') }}</span>
-                </a>
-            </li>
+{{--            <li class="@if (Request::url() == route('quanlycoupon')) nav-item active  @else nav-item @endif">--}}
+{{--                <a class="nav-link"  href="{{route('quanlycoupon')}}">--}}
+{{--                    <i class="fab fa-discourse"></i>--}}
+{{--                    <span>{{ trans('home_ad.ql_coupon') }}</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
 
 
             <!-- Divider -->
@@ -232,7 +232,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
+                 {{--   <!-- Topbar Search -->
                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="{{ trans('home.search') }}" aria-label="Search" aria-describedby="basic-addon2">
@@ -242,7 +242,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form>--}}
 
 
                     <!-- Topbar Navbar -->
@@ -404,20 +404,7 @@
                                     </div>
                                 </a>
                                 @endif
-
-<!--                                 <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a> -->
-                            </div>
+       </div>
                         </li>
 
                         <!-- Nav Item - Language -->
@@ -499,7 +486,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Your Website 2024</span>
                     </div>
                 </div>
             </footer>

@@ -1,5 +1,5 @@
 @extends('Layout')
-@section('title')    
+@section('title')
 All Product
 @endsection
 @section('content-layout')
@@ -29,7 +29,7 @@ All Product
                         <h3 class="sidebar-title">{{ trans('home.brand') }}</h3>
                         <div id="shop-cate-toggle" class="category-menu sidebar-menu sidbar-style">
                             <ul>
-        
+
                                 @foreach($loai_sanpham as $sl)
                                 <?php $sp_sp = App\Models\Product::where('id_type',$sl->id )->get()->count(); ?>
                                 <li>
@@ -123,15 +123,15 @@ All Product
                                     <!-- Product Content End -->
                                 </div>
                                 @endforeach
-                                <!-- Single Product End -->                                       
+                                <!-- Single Product End -->
                             </div>
                             <!-- Side Item End -->
                         </div>
                     </div>
-                    <!-- Product Top End -->                            
+                    <!-- Product Top End -->
                     <!-- Single Banner Start -->
                     <div class="col-img">
-                        <a href="#"><img src="{{asset('source/assets/frontend/img/banner/banner-sidebar.jpg')}}" alt="slider-banner"></a>
+                        <a href="#"><img src="{{asset('source/assets/frontend/img/banner/banner-slide.jpg')}}" alt="slider-banner"></a>
                     </div>
                     <!-- Single Banner End -->
                 </div>
@@ -319,8 +319,8 @@ All Product
                                             <div class="pro-actions">
                                                 <div class="actions-primary">
                                                     @if($all_pro->product_quantity>0)
-                                                    <a 
-                                                        <?php 
+                                                    <a
+                                                        <?php
                                                             if(Auth::check() || Session::get('user_name_login')){
                                                                 $addnewcart = route('themgiohang',$all_pro->id);
                                                             }else{
@@ -351,8 +351,8 @@ All Product
                         <div id="list-view" class="tab-pane fade">
                             <!-- Single Product Start -->
                             @foreach($tacca_sanpham as $all_pro)
-                            <div class="single-product"> 
-                                <div class="row">        
+                            <div class="single-product">
+                                <div class="row">
                                     <!-- Product Image Start -->
                                     <input type="hidden" id="wishList_product_name{{$all_pro->id}}" value="{{$all_pro->$multisp}}" >
                                     <input type="hidden" id="wishList_price{{$all_pro->id}}" value="@if($all_pro->promotion_price == 0)
@@ -388,15 +388,15 @@ All Product
                                             <div class="pro-actions">
                                                 <div class="actions-primary">
                                                     @if($all_pro->product_quantity>0)
-                                                    <a 
-                                                        <?php 
+                                                    <a
+                                                        <?php
                                                             if(Auth::check() || Session::get('user_name_login')){
                                                                 $addnewcart = route('themgiohang',$all_pro->id);
                                                             }else{
                                                                 $addnewcart = route('dangnhap');
                                                             }
                                                         ?>
-                                                    href="{{$addnewcart}}" 
+                                                    href="{{$addnewcart}}"
                                                     title="" data-original-title="{{ trans('home.addcart') }}"> + {{ trans('home.addcart') }}</a>
                                                     @else
                                                     <a class="disabled-link"> + {{ trans('home.addcart') }}</a>

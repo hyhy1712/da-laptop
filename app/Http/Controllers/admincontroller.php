@@ -51,6 +51,16 @@ use Illuminate\Support\Facades\Session;
 
 class admincontroller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            if(Auth::user()->level != 1){
+                return redirect()->route('trang-chu');
+            }
+            return $next($request);
+        });
+    }
 
     public function getIndexAdminDash(Request $req){
     	if (Auth::check() && Auth::user()->level == 1) {
@@ -503,7 +513,7 @@ class admincontroller extends Controller
             $url_canonical = $req->url();
 
 
-            $sanpham1 = DB::select("SELECT sp.id, sp.product_soid ,sp.id_type, type_products.name_type as loai,
+            $sanpham1 = DB::select("SELECT sp.detail_images, sp.id, sp.product_soid ,sp.id_type, type_products.name_type as loai,
                 sp.product_quantity,sp.unit_price,sp.date_sale, sp.promotion_price,sp.image,sp.new,sp.id_post, post.sp_vi as sp_vi,  post.sp_en as sp_en, post.description_en as description_en, post.description_vi as description_vi, post.product_slug
                         FROM products as sp
                         INNER JOIN type_products ON sp.id_type = type_products.id
@@ -596,6 +606,20 @@ class admincontroller extends Controller
             $sp->image = $filename;
         }
 
+        $detailImages = [];
+        if($req->hasFile('detail_images')){
+            foreach($req->file('detail_images') as $file)
+            {
+                $filename = uniqid() . '_' . time() . '.' . $file->getClientOriginalExtension();
+
+                $image_resize = Image::make($file->getRealPath());
+                $image_resize->resize(400, 400);
+                $image_resize->save(public_path('source/image/product/' . $filename));
+                $detailImages[] = $filename;
+            }
+        }
+
+        $sp->detail_images = json_encode($detailImages);
         $sp->save();
 
         return redirect()->back()->with('thongbao', 'Cập nhật thành công!');
@@ -674,6 +698,20 @@ class admincontroller extends Controller
 
 
             }
+            $detailImages = [];
+            if($req->hasFile('detail_images')){
+                foreach($req->file('detail_images') as $file)
+                {
+                    $filename = uniqid() . '_' . time() . '.' . $file->getClientOriginalExtension();
+
+                    $image_resize = Image::make($file->getRealPath());
+                    $image_resize->resize(400, 400);
+                    $image_resize->save(public_path('source/image/product/' . $filename));
+                    $detailImages[] = $filename;
+                }
+            }
+
+            $sp_update->detail_images = json_encode($detailImages);
 
             $sp_update->save();
             return redirect()->route('quanlysanpham')->with('thongbao', 'Cập nhật thành công!');
